@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-habx-client",
+  "name": "@habx/eslint-config-habx-client",
   "version": "1.0.0",
   "description": "Habx eslint configuration for clients.",
   "main": "index.js",
