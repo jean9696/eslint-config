@@ -1,6 +1,6 @@
 {
   "name": "@habx/eslint-config-habx-client",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Habx eslint configuration for clients.",
   "main": "index.js",
   "scripts": {
@@ -22,10 +22,13 @@
   },
   "homepage": "https://github.com/habx/eslint-config-habx-client#readme",
   "devDependencies": {
-    "eslint": "4.10.0",
+    "ajv": "^6.10.0",
+    "ajv-keywords": "^3.4.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.10.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-flowtype": "^3.5.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-import-helpers": "^0.1.4",
     "eslint-plugin-jest": "^22.4.1",
