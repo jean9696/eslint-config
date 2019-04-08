@@ -1,6 +1,6 @@
 {
   "name": "@habx/eslint-config-habx-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Habx eslint configuration for clients.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "url": "https://github.com/habx/eslint-config-habx-client/issues"
   },
   "homepage": "https://github.com/habx/eslint-config-habx-client#readme",
-  "devDependencies": {
+  "dependencies": {
     "ajv": "^6.10.0",
     "ajv-keywords": "^3.4.0",
     "babel-eslint": "^10.0.1",

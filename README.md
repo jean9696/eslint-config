@@ -5,6 +5,6 @@
 
 ```
 {
-  "extends": ["habx-client"]
+  "extends": ["@habx/habx-client"]
 }
 ```
