@@ -1,3 +1,5 @@
+# Installation
+Run `npm i --save-dev @habx/eslint-config-client`
 # Usage
 1) Run `npm install --save-dev eslint-config-habx-client`
 2) Create a `.eslintrc` file
@@ -5,6 +7,6 @@
 
 ```
 {
-  "extends": ["@habx/habx-client"]
+  "extends": ["@habx/client"]
 }
 ```
