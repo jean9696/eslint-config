@@ -14,6 +14,7 @@ module.exports = {
       "singleQuote": true,
       "prefer-template": true
     }],
+    "no-unused-vars": "error",
     "no-console": "error",
     "prefer-template": "warn",
     "react-hooks/rules-of-hooks": "error",
