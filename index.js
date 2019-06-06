@@ -4,7 +4,8 @@ module.exports = {
   "plugins": [
     "jest",
     "react-hooks",
-    "import-helpers"
+    "import-helpers",
+    "graphql"
   ],
   "rules": {
     "prettier/prettier": ["warn", {
@@ -56,7 +57,51 @@ module.exports = {
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-    ]
+
+    ],
+    "rules": {
+      "graphql/no-deprecated-fields": [
+        "error"
+      ],
+      "graphql/required-fields": [
+        "warn",
+        {
+          "requiredFields": [
+            "id"
+          ]
+        }
+      ],
+      "graphql/template-strings": [
+        "error",
+        {
+          "validators": [
+            "ExecutableDefinitions",
+            "FieldsOnCorrectType",
+            "FragmentsOnCompositeTypes",
+            "KnownArgumentNames",
+            "KnownDirectives",
+            "KnownTypeNames",
+            "LoneAnonymousOperation",
+            "NoFragmentCycles",
+            "NoUnusedVariables",
+            "OverlappingFieldsCanBeMerged",
+            "PossibleFragmentSpreads",
+            "ScalarLeafs",
+            "SingleFieldSubscriptions",
+            "UniqueArgumentNames",
+            "UniqueDirectivesPerLocation",
+            "UniqueFragmentNames",
+            "UniqueInputFieldNames",
+            "UniqueOperationNames",
+            "UniqueVariableNames",
+            "ValuesOfCorrectType",
+            "VariablesAreInputTypes",
+            "VariablesDefaultValueAllowed",
+            "VariablesInAllowedPosition"
+          ]
+        }
+      ]
+    }
   },
   "env": {
     "browser": true,
