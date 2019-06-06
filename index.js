@@ -20,8 +20,8 @@ module.exports = {
     "prefer-template": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/no-unused-prop-types": "error",
-    "react/prop-types": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/prop-types": "error",
     "import-helpers/order-imports": [
       "warn",
       {
@@ -57,51 +57,47 @@ module.exports = {
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-
     ],
-    "rules": {
-      "graphql/no-deprecated-fields": [
-        "error"
-      ],
-      "graphql/required-fields": [
-        "warn",
-        {
-          "requiredFields": [
-            "id"
-          ]
-        }
-      ],
-      "graphql/template-strings": [
-        "error",
-        {
-          "validators": [
-            "ExecutableDefinitions",
-            "FieldsOnCorrectType",
-            "FragmentsOnCompositeTypes",
-            "KnownArgumentNames",
-            "KnownDirectives",
-            "KnownTypeNames",
-            "LoneAnonymousOperation",
-            "NoFragmentCycles",
-            "NoUnusedVariables",
-            "OverlappingFieldsCanBeMerged",
-            "PossibleFragmentSpreads",
-            "ScalarLeafs",
-            "SingleFieldSubscriptions",
-            "UniqueArgumentNames",
-            "UniqueDirectivesPerLocation",
-            "UniqueFragmentNames",
-            "UniqueInputFieldNames",
-            "UniqueOperationNames",
-            "UniqueVariableNames",
-            "ValuesOfCorrectType",
-            "VariablesAreInputTypes",
-            "VariablesDefaultValueAllowed",
-            "VariablesInAllowedPosition"
-          ]
-        }
-      ]
-    }
+    "graphql/no-deprecated-fields": [
+      "error"
+    ],
+    "graphql/required-fields": [
+      "warn",
+      {
+        "requiredFields": [
+          "id"
+        ]
+      }
+    ],
+    "graphql/template-strings": [
+      "error",
+      {
+        "validators": [
+          "ExecutableDefinitions",
+          "FieldsOnCorrectType",
+          "FragmentsOnCompositeTypes",
+          "KnownArgumentNames",
+          "KnownDirectives",
+          "KnownTypeNames",
+          "LoneAnonymousOperation",
+          "NoFragmentCycles",
+          "NoUnusedVariables",
+          "OverlappingFieldsCanBeMerged",
+          "PossibleFragmentSpreads",
+          "ScalarLeafs",
+          "SingleFieldSubscriptions",
+          "UniqueArgumentNames",
+          "UniqueDirectivesPerLocation",
+          "UniqueFragmentNames",
+          "UniqueInputFieldNames",
+          "UniqueOperationNames",
+          "UniqueVariableNames",
+          "ValuesOfCorrectType",
+          "VariablesAreInputTypes",
+          "VariablesInAllowedPosition"
+        ]
+      }
+    ]
   },
   "env": {
     "browser": true,
