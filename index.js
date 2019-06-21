@@ -25,32 +25,26 @@ module.exports = {
     "import-helpers/order-imports": [
       "warn",
       {
-        "newlines-between": "always",
+        "newlinesBetween": "always",
         "groups": [
-          ["builtin", "external", "internal"],
+          ["module"],
           ["/^@habx/"],
           ["/^@components/"],
           [
-            "/^@actions/",
             "/^@assets/",
             "/^@api/",
             "/^@config/",
             "/^@constants/",
             "/^@fonts/",
             "/^@helpers/",
-            "/^@hocs/",
             "/^@hooks/",
             "/^@lib/",
             "/^@logic/",
             "/^@pages/",
             "/^@puppeteer/",
             "/^@query/",
-            "/^@reducers/",
-            "/^@redux-module/",
             "/^@routes/",
-            "/^@selectors/",
             "/^@style/",
-            "/^@utils/"
           ],
           ["parent"],
           ["sibling", "index"]
@@ -58,46 +52,6 @@ module.exports = {
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
-    "graphql/no-deprecated-fields": [
-      "error"
-    ],
-    "graphql/required-fields": [
-      "warn",
-      {
-        "requiredFields": [
-          "id"
-        ]
-      }
-    ],
-    "graphql/template-strings": [
-      "error",
-      {
-        "validators": [
-          "ExecutableDefinitions",
-          "FieldsOnCorrectType",
-          "FragmentsOnCompositeTypes",
-          "KnownArgumentNames",
-          "KnownDirectives",
-          "KnownTypeNames",
-          "LoneAnonymousOperation",
-          "NoFragmentCycles",
-          "NoUnusedVariables",
-          "OverlappingFieldsCanBeMerged",
-          "PossibleFragmentSpreads",
-          "ScalarLeafs",
-          "SingleFieldSubscriptions",
-          "UniqueArgumentNames",
-          "UniqueDirectivesPerLocation",
-          "UniqueFragmentNames",
-          "UniqueInputFieldNames",
-          "UniqueOperationNames",
-          "UniqueVariableNames",
-          "ValuesOfCorrectType",
-          "VariablesAreInputTypes",
-          "VariablesInAllowedPosition"
-        ]
-      }
-    ]
   },
   "env": {
     "browser": true,
