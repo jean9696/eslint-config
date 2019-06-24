@@ -27,9 +27,9 @@ module.exports = {
       {
         "newlinesBetween": "always",
         "groups": [
-          ["module"],
-          ["/^@habx/"],
-          ["/^@components/"],
+          "module",
+          "/^@habx/",
+          "/^@components/",
           [
             "/^@assets/",
             "/^@api/",
@@ -46,7 +46,7 @@ module.exports = {
             "/^@routes/",
             "/^@style/",
           ],
-          ["parent"],
+          "parent",
           ["sibling", "index"]
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
