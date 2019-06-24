@@ -8,17 +8,10 @@ workflows:
           filters:
             tags:
               only: /^v.*/
-      - lint:
-          context: default_env_vars
-          requires:
-          - fetch-node-modules
-          filters:
-            tags:
-              only: /^v.*/
       - publish-on-tag:
           context: default_env_vars
           requires:
-          - lint
+          - fetch-node-modules
           filters:
             tags:
               only: /^v.*/
@@ -46,16 +39,6 @@ jobs:
           root: /root
           paths:
             - project
-
-  lint:
-    docker:
-      - image: habx/node-base:9-alpine-npm6
-    steps:
-      - attach_workspace:
-          at: /root/
-      - run:
-          command: |
-            npm run lint
 
   publish-on-tag:
     docker:
