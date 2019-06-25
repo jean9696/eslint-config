@@ -5,7 +5,6 @@ module.exports = {
     "jest",
     "react-hooks",
     "import-helpers",
-    "graphql"
   ],
   "rules": {
     "prettier/prettier": ["warn", {
