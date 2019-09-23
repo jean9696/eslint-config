@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/habx/eslint-config-habx-client#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^1.13.0",
     "ajv": "^6.10.2",
     "ajv-keywords": "^3.4.1",
