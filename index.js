@@ -35,6 +35,7 @@ module.exports = {
             "/^@config/",
             "/^@constants/",
             "/^@fonts/",
+            "/^@globalTypes/",
             "/^@helpers/",
             "/^@hooks/",
             "/^@lib/",
