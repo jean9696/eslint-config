@@ -45,6 +45,7 @@ module.exports = {
             "/^@query/",
             "/^@routes/",
             "/^@style/",
+            "/^@utils/",
           ],
           "parent",
           ["sibling", "index"]
