@@ -15,12 +15,14 @@ module.exports = {
       "prefer-template": true
     }],
     "no-unused-vars": "error",
+    "no-redeclare": "error",
     "no-console": "error",
-    "prefer-template": "warn",
+    "prefer-template": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/no-unused-prop-types": "warn",
     "react/prop-types": "error",
+    "react/no-unused-prop-types": "warn",
+    "no-debugger": "warn",
     "import-helpers/order-imports": [
       "warn",
       {
