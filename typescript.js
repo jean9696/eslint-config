@@ -9,13 +9,14 @@ module.exports = {
     }
   },
   "rules": {
-    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
   },
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "no-unused-var": "off"
       }
     }
   ]
