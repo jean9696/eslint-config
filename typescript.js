@@ -8,6 +8,9 @@ module.exports = {
       "jsx":  true
     }
   },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+  },
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],

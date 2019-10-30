@@ -14,7 +14,7 @@ module.exports = {
       "singleQuote": true,
       "prefer-template": true
     }],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
     "no-redeclare": "error",
     "no-console": "error",
     "prefer-template": "error",
