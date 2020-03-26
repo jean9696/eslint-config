@@ -17,6 +17,7 @@ module.exports = {
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
     "no-redeclare": "error",
     "no-console": "error",
+    "no-shadow": ["error", { "allow": ["_", "e"] }],
     "prefer-template": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
