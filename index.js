@@ -21,6 +21,7 @@ module.exports = {
     "prefer-template": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-key": "error",
     "react/prop-types": "error",
     "react/no-unused-prop-types": "warn",
     "no-debugger": "warn",
