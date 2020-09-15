@@ -77,9 +77,6 @@ module.exports = {
     "page": true,
     "browser": true,
     "context": true,
-    "jestPuppeteer": true,
-    "analytics": true,
     "location": true,
-    "mushu": true
   }
 }
