@@ -29,6 +29,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-key": "error",
     "no-debugger": "warn",
+    "no-empty": "error",
     "import-helpers/order-imports": [
       "warn",
       {
