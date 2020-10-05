@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/habx/eslint-config-habx-client.git"
+    "url": "git+https://github.com/habx/eslint-config-client.git"
   },
   "keywords": [
     "eslint",
@@ -18,9 +18,9 @@
   "author": "habx",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/habx/eslint-config-habx-client/issues"
+    "url": "https://github.com/habx/eslint-config-client/issues"
   },
-  "homepage": "https://github.com/habx/eslint-config-habx-client#readme",
+  "homepage": "https://github.com/habx/eslint-config-client#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
