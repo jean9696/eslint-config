@@ -40,5 +40,6 @@
     "prettier": "^2.0.1",
     "prettier-eslint": "^11.0.0",
     "prettier-eslint-cli": "^5.0.0"
-  }
+  },
+  "publishConfig": "https://npm.pkg.github.com/"
 }
