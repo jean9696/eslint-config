@@ -174,10 +174,6 @@ orbs:
 workflows:
   build:
     jobs:
-      - build:
-          context: default_env_vars
-          filters:
-            <<: *filters_allow_tags
       - lint:
           context: default_env_vars
           filters:
@@ -185,7 +181,6 @@ workflows:
       - npm-publish:
           context: default_env_vars
           requires:
-            - build
             - lint
           filters:
             <<: *filters_allow_tags
@@ -193,7 +188,6 @@ workflows:
       - npm-deprecated-publish:
           context: default_env_vars
           requires:
-            - build
             - lint
           filters:
             <<: *filters_allow_tags
