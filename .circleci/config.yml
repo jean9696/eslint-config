@@ -129,13 +129,19 @@ orbs:
 workflows:
   build:
     jobs:
-      - npm-publish:
-          context: default_env_vars
+      - npmjs-publish:
+          context: ts-lib-client-public
+          requires:
+            - lint
+            - build
           filters:
             <<: *filters_allow_tags
             <<: *filters_ignore_branches
-      - npm-deprecated-publish:
-          context: default_env_vars
+      - github-pkg-publish:
+          context: ts-lib-client-public
+          requires:
+            - lint
+            - build
           filters:
             <<: *filters_allow_tags
             <<: *filters_ignore_branches
