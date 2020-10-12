@@ -1,7 +1,3 @@
-# --------------------------------------------------- #
-# https://github.com/habx/devops-template-circleci    #
-# ----------- DO NOT EDIT BELOW THIS LINE ----------- #
-# --------------------------------------------------- #
 version: 2.1
 
 # --- Anchor alias ---- #
@@ -12,38 +8,26 @@ alias:
     docker:
       - image: circleci/node:14.13.1
         user: root
-  - &docker_buildpack_deps_configuration
-    docker:
-      - image: circleci/buildpack-deps:stretch
-        user: root
-  - &docker_buildpack_deps_python_configuration
-    docker:
-      - image: circleci/python
-        user: root
 # - Jobs filters - #
-  - &filters_ignore_tags
-    tags:
-      ignore: /.*/
-  - &filters_ignore_branches
-    branches:
-      ignore: /.*/
   - &filters_allow_tags
     tags:
       only: /^v.*/
-  - &filters_allow_branch_dev
+  - &filters_ignore_branches
     branches:
-      only:
-        - dev
+      ignore: /.*/
+  - &filters_ignore_tags
+    tags:
+      ignore: /.*/
 # - Step - #
-  - &preconfig
+  - &preconfig-github-pkg
     run:
       name: Preconfigure environment ~/.npmrc
       command: |
         echo "@${GITHUB_PKG_NPM_ORG}:registry=https://npm.pkg.github.com/" > ~/.npmrc
         echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ~/.npmrc
-  - &preconfig-deprecated
+  - &preconfig-npmjs
     run:
-      name: Preconfigure environment ~/.npmrc (deprecated)
+      name: Preconfigure environment ~/.npmrc
       command: |
         echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 # - Node modules - #
@@ -74,7 +58,6 @@ jobs:
     <<: *docker_node14_configuration
     steps:
       - checkout
-      - *preconfig-deprecated
       - *install_node_modules_with_cache_production
       - *install_node_modules_with_cache
       - run: export NODE_ENV=production; npm run build
@@ -87,23 +70,16 @@ jobs:
     <<: *docker_node14_configuration
     steps:
       - checkout
-      - *preconfig-deprecated
       - *install_node_modules_with_cache
       - attach_workspace:
           at: ~/project
-      - *preconfig-deprecated
       - *install_node_modules_with_cache
       - run: npm run storybook:build
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .storybook-static
 
   lint:
     <<: *docker_node14_configuration
     steps:
       - checkout
-      - *preconfig-deprecated
       - *install_node_modules_with_cache
       - run: npm run lint
 
@@ -111,44 +87,29 @@ jobs:
     <<: *docker_node14_configuration
     steps:
       - checkout
-      - *preconfig-deprecated
       - *install_node_modules_with_cache
       - run: npm run test
 
-  tests-puppeteer:
-    <<: *docker_node14_configuration
-    parallelism: 1
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/project
-      - *preconfig-deprecated
-      - *install_node_modules_with_cache
-      - puppeteer/install
-      - run:
-          name: Puppeteer test
-          command: |
-            npm run test
-  npm-publish:
+  github-pkg-publish:
     <<: *docker_node14_configuration
     steps:
       - checkout
       - attach_workspace:
           at: ~/project
-      - *preconfig
+      - *preconfig-github-pkg
       - *install_node_modules_with_cache
       - run: npm publish
 
-  npm-deprecated-publish:
+  npmjs-publish:
     <<: *docker_node14_configuration
     steps:
       - checkout
       - attach_workspace:
           at: ~/project
-      - *preconfig-deprecated
+      - *preconfig-npmjs
       - *install_node_modules_with_cache
       - run: jq -M 'del(.publishConfig)' package.json > _package.json; mv _package.json package.json
-      - run: NPM_TOKEN=${NPM_TOKEN_RW} npm publish
+      - run: npm publish
 
   storybook-publish:
     <<: *docker_node14_configuration
@@ -156,13 +117,11 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/project
-      - *preconfig-deprecated
       - *install_node_modules_with_cache
       - run: npm run storybook:deploy
 
 orbs:
   node: circleci/node@1.0.1
-  puppeteer: threetreeslight/puppeteer@0.1.2
 # --- END --- #
 # --------------------------------------------------- #
 # -------------- DEFINE YOUR WORKFLOW --------------- #
