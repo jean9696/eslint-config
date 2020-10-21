@@ -129,6 +129,9 @@ orbs:
 workflows:
   build:
     jobs:
+      - lint:
+          filters:
+            <<: *filters_ignore_tags
       - npmjs-publish:
           context: ts-lib-client-public
           filters:
