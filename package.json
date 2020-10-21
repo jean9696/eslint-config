@@ -6,6 +6,16 @@
   "scripts": {
     "lint": "eslint *.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/habx/eslint-config-client.git"
@@ -35,6 +45,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
     "prettier": "^2.1.2",
     "prettier-eslint": "^11.0.0",
     "prettier-eslint-cli": "^5.0.0"
