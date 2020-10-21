@@ -7,13 +7,30 @@ module.exports = {
       "jsx":  true
     }
   },
-  "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended"
+  ],
   "plugins": [
     "jest",
     "react-hooks",
     "import-helpers",
   ],
   "rules": {
+    /**
+     * Vanilla ESLint
+     */
+    "no-redeclare": "error",
+    "no-console": "error",
+    "no-shadow": ["error", { "allow": ["_", "e"] }],
+    "prefer-template": "error",
+    "no-empty": "error",
+    "no-debugger": "warn",
+    "no-unused-vars": "off", // Use TS rule
+
+    /**
+     * Prettier
+     */
     "prettier/prettier": ["warn", {
       "trailingComma": "es5",
       "tabWidth": 2,
@@ -21,15 +38,21 @@ module.exports = {
       "singleQuote": true,
       "prefer-template": true
     }],
-    "no-redeclare": "error",
-    "no-console": "error",
-    "no-shadow": ["error", { "allow": ["_", "e"] }],
-    "prefer-template": "error",
+
+    /**
+     * React Hooks
+     */
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-key": "error",
-    "no-debugger": "warn",
-    "no-empty": "error",
+
+    /**
+     * TypeScript
+     */
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+
+    /**
+     * Import Helpers
+     */
     "import-helpers/order-imports": [
       "warn",
       {
@@ -62,7 +85,6 @@ module.exports = {
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
   },
   "env": {
     "browser": true,
@@ -78,6 +100,7 @@ module.exports = {
     "page": true,
     "browser": true,
     "context": true,
+    "analytics": true,
     "location": true,
   }
 }
