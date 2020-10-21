@@ -100,7 +100,6 @@ module.exports = {
     "page": true,
     "browser": true,
     "context": true,
-    "analytics": true,
     "location": true,
   }
 }
