@@ -1,109 +1,57 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
   extends: ['react-app', 'plugin:prettier/recommended'],
-  plugins: ['jest', 'react-hooks', 'import-helpers'],
+  plugins: ['import-helpers', 'prettier'],
   rules: {
-    /**
-     * Vanilla ESLint
-     */
-    'no-redeclare': 'error',
     'no-console': 'error',
-    'no-shadow': ['error', { allow: ['_', 'e'] }],
-    'prefer-template': 'error',
-    'no-empty': 'error',
     'no-debugger': 'warn',
-    'no-unused-vars': 'off', // Use TS rule
+    'no-empty': 'error',
+    'prefer-template': 'error',
 
-    /**
-     * Prettier
-     */
-    'prettier/prettier': [
-      'warn',
-      {
-        trailingComma: 'es5',
-        tabWidth: 2,
-        semi: false,
-        singleQuote: true,
-        'prefer-template': true,
-      },
-    ],
+    '@typescript-eslint/no-redeclare': 'error',
+    '@typescript-eslint/no-shadow': ['error', { allow: ['_', 'e'] }],
+    '@typescript-eslint/no-unused-vars': ['error', {
+      argsIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+    }],
 
-    /**
-     * React
-     */
-    'react/jsx-key': 'warn',
-
-    /**
-     * React Hooks
-     */
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-
-    /**
-     * TypeScript
-     */
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-    ],
-
-    /**
-     * Import Helpers
-     */
-    'import-helpers/order-imports': [
-      'warn',
-      {
-        newlinesBetween: 'always',
-        groups: [
-          'module',
-          '/^@habx/',
-          '/^@components/',
-          [
-            '/^@assets/',
-            '/^@api/',
-            '/^@config/',
-            '/^@constants/',
-            '/^@fonts/',
-            '/^@globalTypes/',
-            '/^@helpers/',
-            '/^@hooks/',
-            '/^@lib/',
-            '/^@logic/',
-            '/^@pages/',
-            '/^@puppeteer/',
-            '/^@query/',
-            '/^@routes/',
-            '/^@style/',
-            '/^@utils/',
-          ],
-          'parent',
-          ['sibling', 'index'],
+    'import-helpers/order-imports': ['warn', {
+      newlinesBetween: 'always',
+      groups: [
+        'module',
+        '/^@habx/',
+        '/^@components/',
+        [
+          '/^@assets/',
+          '/^@api/',
+          '/^@config/',
+          '/^@constants/',
+          '/^@fonts/',
+          '/^@globalTypes/',
+          '/^@helpers/',
+          '/^@hooks/',
+          '/^@lib/',
+          '/^@logic/',
+          '/^@pages/',
+          '/^@puppeteer/',
+          '/^@query/',
+          '/^@routes/',
+          '/^@style/',
+          '/^@utils/',
         ],
-        alphabetize: { order: 'asc', ignoreCase: true },
-      },
-    ],
-  },
-  env: {
-    browser: true,
-    node: true,
-  },
-  settings: {
-    react: {
-      version: '16.8.5',
-    },
-  },
-  globals: {
-    Sentry: true,
-    page: true,
-    browser: true,
-    context: true,
-    location: true,
-  },
+        'parent',
+        ['sibling', 'index'],
+      ],
+      alphabetize: { order: 'asc', ignoreCase: true },
+    }],
+
+    'prettier/prettier': ['warn', {
+      trailingComma: 'es5',
+      tabWidth: 2,
+      semi: false,
+      singleQuote: true,
+      'prefer-template': true,
+    }],
+
+    'react/jsx-key': 'warn',
+  }
 }
