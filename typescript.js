@@ -7,6 +7,8 @@ module.exports = {
     'no-empty': 'error',
     'prefer-template': 'error',
 
+    'multiline-comment-style': 'warn',
+
     '@typescript-eslint/no-redeclare': 'error',
     '@typescript-eslint/no-shadow': ['error', { allow: ['_', 'e'] }],
     '@typescript-eslint/no-unused-vars': ['error', {
