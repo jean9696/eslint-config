@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['react-app', 'plugin:prettier/recommended'],
-  plugins: ['import-helpers', 'prettier'],
+  plugins: ['import-helpers', 'prettier', 'deprecation'],
   rules: {
     'no-console': 'error',
     'no-debugger': 'warn',
@@ -55,5 +55,11 @@ module.exports = {
     }],
 
     'react/jsx-key': 'warn',
+
+    'deprecation/deprecation': 'error',
+  },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: './tsconfig.json'
   }
 }
