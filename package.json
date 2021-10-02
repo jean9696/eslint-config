@@ -1,6 +1,6 @@
 {
   "name": "@jean9696/eslint-config-custom",
-  "version": "7.0.5",
+  "version": "7.0.6",
   "description": "My lint config",
   "main": "index.js",
   "scripts": {
@@ -51,5 +51,8 @@
   "devDependencies": {
     "husky": "^5.2.0",
     "lint-staged": "^11.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
