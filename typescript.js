@@ -25,7 +25,6 @@ module.exports = {
         newlinesBetween: 'always',
         groups: [
           'module',
-          '/^@habx/',
           '/^@components/',
           [
             '/^@assets/',

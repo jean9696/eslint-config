@@ -1,7 +1,7 @@
 {
   "name": "@habx/eslint-config-client",
   "version": "6.4.0",
-  "description": "Habx eslint configuration for clients.",
+  "description": "My lint config",
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js"
@@ -18,14 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/habx/eslint-config-client.git"
+    "url": "git+https://github.com/jean9696/eslint-config"
   },
   "keywords": [
     "eslint",
-    "habx",
     "lint"
   ],
-  "author": "habx",
+  "author": "Jean Dessane",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/habx/eslint-config-client/issues"
