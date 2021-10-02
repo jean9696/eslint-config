@@ -1,5 +1,5 @@
 {
-  "name": "@habx/eslint-config-client",
+  "name": "@jean9696/eslint-config",
   "version": "6.4.0",
   "description": "My lint config",
   "main": "index.js",
