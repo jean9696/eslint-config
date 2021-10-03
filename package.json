@@ -1,6 +1,6 @@
 {
   "name": "@jean9696/eslint-config",
-  "version": "7.0.8",
+  "version": "7.0.9",
   "description": "My lint config",
   "main": "index.js",
   "scripts": {
