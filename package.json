@@ -1,6 +1,6 @@
 {
   "name": "@jean9696/eslint-config",
-  "version": "7.0.11",
+  "version": "7.0.12",
   "description": "My lint config",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jean9696/eslint-config-custom.git"
+    "url": "git+https://github.com/jean9696/eslint-config.git"
   },
   "keywords": [
     "eslint",
@@ -27,9 +27,9 @@
   "author": "Jean Dessane",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jean9696/eslint-config-custom.git/issues"
+    "url": "https://github.com/jean9696/eslint-config.git/issues"
   },
-  "homepage": "https://github.com/jean9696/eslint-config-custom.git#readme",
+  "homepage": "https://github.com/jean9696/eslint-config.git#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
