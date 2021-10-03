@@ -5,6 +5,6 @@
 
 ```
 {
-  "extends": ["@jean9696/custom"]
+  "extends": ["@jean9696"]
 }
 ```
